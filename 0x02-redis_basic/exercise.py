@@ -79,12 +79,12 @@ class Cache:
         return val
 
     def get_str(self, key: str) -> str:
-        """automatically y parametrize Cache.get with the correct conversion function"""
+        """automatically parametrize Cache.get with the conversion function"""
         val = self._redis.get(key)
         return val.decode("utf-8")
 
     def get_int(self, key: str) -> int:
-        """automatically y parametrize Cache.get with the correct conversion function"""
+        """automatically parametrize Cache.get with the conversion function"""
         val = self._redis.get(key)
         try:
             val = int(value.decode("utf-8"))
